@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* .container {
+            border: 1px solid red;
+        } */
+        button {
+            border: none;
+            background-color: transparent;
+        }
+
+        .tab-box {
+            display: flex;
+        }
+
+        .tab {
+            width: 160px;
+            height: 48px;
+            margin: 0;
+            font-size: 1.2rem;
+            border-top: 4px solid transparent;
+            background-color: #eee;
+            cursor: pointer;
+        }
+
+        .tab.active {
+            border-top: 4px solid #000094;
+            background-color: #fff;
+        }
+
+        .box {
+            height: 300px;
+            margin: 20px 0;
+            display: none;
+        }
+
+        .box.show {
+            display: block;
+        }
+
+        #profile {
+            background-color: aqua;
+        }
+
+        #experience {
+            background-color: aquamarine;
+        }
+
+        #projects {
+            background-color: bisque;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="tab-box">
+            <!-- data- 屬性為客製化屬性 => 此處用來連結對應的 box 元素 -->
+            <button class="tab active" data-box-id="profile">Profile</button>
+            <button class="tab" data-box-id="experience">Experience</button>
+            <button class="tab" data-box-id="projects">Projects</button>
+        </div>
+        <div id="profile" class="box show">Profile Content</div>
+        <div id="experience" class="box">Experience Content</div>
+        <div id="projects" class="box">Projects Content</div>
+    </div>
+
+    <script>
+        // 用 querySelectorAll 選擇有同樣 class 的元素 => 為一陣列
+        let tabs = document.querySelectorAll(".tab");
+        let boxes = document.querySelectorAll(".box");
+
+        // 監聽事件發生時，瀏覽器會蒐集事件相關資訊，回傳至第一個參數 = 此處的 event
+        function showBox(event) {
+            let selectedTab = event.target;     // event.target 代表事件發生的對象（元素）
+            let boxId = selectedTab.getAttribute("data-box-id");     // 透過點擊對象中，取得 "data-box-id" 屬性的內容
+            let selectedBox = document.querySelector(`#${boxId}`);   // 將屬性內容：字串 "profile" 等，加上 #
+            // console.log(boxId);
+
+            // forEach 迴圈：第一個參數代表陣列中單一元素 => 對陣列中每一個元素進行涵式
+            // 第二個參數可為 index => 陣列編號，若不需用到則不用寫
+            tabs.forEach((element) => {
+                element.classList.remove("active");
+            });
+            boxes.forEach((element) => {
+                element.classList.remove("show");
+            });
+
+            selectedTab.classList.add("active");
+            selectedBox.classList.add("show");
+        }
+
+        tabs.forEach((element) => {
+            // 監聽事件發生時，瀏覽器會蒐集事件相關資訊，回傳至第一個參數 => 帶入 showBox 函式中
+            element.addEventListener("click", (event) => showBox(event));
+        });
+
+    </script>
+</body>
+
+</html>

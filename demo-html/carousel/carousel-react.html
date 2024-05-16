@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <!-- JS -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- React -->
+    <script type="text/babel">
+        // #1 取出 useState & useEffect 的方法
+        const { useState, useEffect } = React;
+
+        //-------------------輪播圖-------------------
+        const Carousel = () => {
+            // useState 語法 => [前者為變數, 後者是寫入變數的方法] = useState（初始值） 
+            const [currentSlide, setCurrentSlide] = useState(0);
+
+            // 建立圖片陣列 => 使用 map 迴圈跑輪播圖和指示長條
+            const slides = [
+                "banner-1.jpg",
+                "banner-2.jpg",
+                "banner-3.jpg",
+                "banner-4.jpg",
+                "banner-5.jpg",
+                "banner-6.jpg"
+            ];
+
+            // 播放前一張／後一張的函式
+            const prevSlide = () => {
+                setCurrentSlide((currentSlide - 1 + slides.length) % slides.length);
+            }
+            const nextSlide = () => {
+                setCurrentSlide((currentSlide + 1) % slides.length);
+            }
+
+            // useEffect：每 3 秒播放下一張 => 當 [currentSlide] 變動時，會重新執行函式
+            useEffect(() => {
+                const intervalId = setInterval(nextSlide, 3000);
+                // return 的函式，React 將在下次執行 effect 前執行，清除前一個 render 的 effect
+                return () => { clearInterval(intervalId) };
+            }, [currentSlide]);
+
+            return (
+                <>
+                    <div className="banner-bg-p">
+                        {
+                            slides.map((element, index) => (
+                                <img
+                                    key={index}
+                                    className={`carousel ${index === currentSlide ? "active" : ""}`}
+                                    src={`./images/${element}`}
+                                    alt="Lume Fragrance 主打商品"
+                                />
+                            ))
+                        }
+                    </div>
+                    <div className="navigation">
+                        {
+                            slides.map((element, index) => {
+                                return (
+                                    <span
+                                        key={index}
+                                        className={`indicator ${index === currentSlide ? "active" : ""}`}
+                                        onClick={() => { setCurrentSlide(index); }}
+                                    ></span>
+                                )
+                            })
+                        }
+                    </div>
+                    <button className="btn-prev" onClick={prevSlide}><img src="./images/icon-arrow.svg" alt="" /></button>
+                    <button className="btn-next" onClick={nextSlide}><img src="./images/icon-arrow.svg" alt="" /></button>
+                </>
+            )
+        }
+
+        const App = () => {
+
+            return (
+                <>
+                    <div className="cover">
+                        <div className="banner-box-p">
+                            <Carousel />
+                            <img className="banner-logo-p" src="./images/LOGO-07.png" alt="Lume Fragrance" />
+                            <img className="banner-gradient" src="./images/gradient.png" alt="漸層" />
+                        </div>
+                        <div id="products" className="title-p">
+                            <h2 className="en-sans-light-l">Products</h2>
+                            <h1 className="serif-medium-l">商品總覽</h1>
+                        </div>
+                    </div>
+                </>
+            )
+        };
+
+        ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+
+    </script>
+
+</body>
+
+</html>
