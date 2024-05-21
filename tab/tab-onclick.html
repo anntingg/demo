@@ -9,10 +9,7 @@
         /* .container {
             border: 1px solid red;
         } */
-        button {
-            border: none;
-            background-color: transparent;
-        }
+
         .tab-box {
             display: flex;
         }
@@ -20,7 +17,11 @@
         .tab {
             width: 160px;
             height: 48px;
-            margin: 0;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
             font-size: 1.2rem;
             border-top: 4px solid transparent;
             background-color: #eee;
@@ -60,9 +61,9 @@
     <div class="container">
         <div class="tab-box">
             <!-- onclick 事件中，參數 this 為事件發生的對象 -->
-            <button class="tab active" onclick="showBox(this, '#profile');">Profile</button>
-            <button class="tab" onclick="showBox(this, '#experience');">Experience</button>
-            <button class="tab" onclick="showBox(this, '#projects');">Projects</button>
+            <div class="tab active" onclick="showBox(this, '#profile');">Profile</div>
+            <div class="tab" onclick="showBox(this, '#experience');">Experience</div>
+            <div class="tab" onclick="showBox(this, '#projects');">Projects</div>
         </div>
         <div id="profile" class="box show">Profile Content</div>
         <div id="experience" class="box">Experience Content</div>

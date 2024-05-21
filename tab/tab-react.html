@@ -9,10 +9,7 @@
         /* .container {
             border: 1px solid red;
         } */
-        button {
-            border: none;
-            background-color: transparent;
-        }
+
         .tab-box {
             display: flex;
         }
@@ -20,13 +17,16 @@
         .tab {
             width: 160px;
             height: 48px;
-            margin: 0;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
             font-size: 1.2rem;
             border-top: 4px solid transparent;
             background-color: #eee;
             cursor: pointer;
         }
-
         .tab.active {
             border-top: 4px solid #000094;
             background-color: #fff;
@@ -97,9 +97,9 @@
                 <div className="container">
                     <div className="tab-box">
                         {/* 事件發生當下，瀏覽器收集和事件有關的資訊，產生事件物件 Event Object，回傳到第一個參數中*/}
-                        <button className="tab active" onClick={(event) => {showBox(event.target, '#profile')}}>Profile</button>
-                        <button className="tab" onClick={(event) => showBox(event.target, '#experience')}>Experience</button>
-                        <button className="tab" onClick={(event) => showBox(event.target, '#projects')}>Projects</button>
+                        <div className="tab active" onClick={(event) => {showBox(event.target, '#profile')}}>Profile</div>
+                        <div className="tab" onClick={(event) => showBox(event.target, '#experience')}>Experience</div>
+                        <div className="tab" onClick={(event) => showBox(event.target, '#projects')}>Projects</div>
                     </div>
                     <div id="profile" className="box show">Profile Content</div>
                     <div id="experience" className="box">Experience Content</div>
