@@ -42,11 +42,6 @@ function moveOffset() {
     articlesBox.style.transform = `translateX(${offset}px)`;
 }
 
-function activateIndicator(n) {
-    indicatorsAll.forEach(element => element.classList.remove("active"));
-    indicatorsAll[n].classList.add("active");
-}
-
 function restartInterval() {
     clearInterval(intervalIdCard);
     intervalIdCard = setInterval(showNextCard, 3000);
@@ -54,15 +49,12 @@ function restartInterval() {
 
 // ------------播放前一項／後一項------------
 function showNextCard() {
-    // console.log(currentCardIndex);
-
     // currentIndex +1，執行時往後一個項目播放
     currentCardIndex++;
     moveOffset();
 
     // 當第一個複製項目到達最左側時，將框框重製回原本位置
     if (currentCardIndex === articleCards.length) {
-        activateIndicator(0);
 
         // 等移動的 transition 0.5 秒做完時，暫停 transition，重置框框位置 & 編號
         setTimeout(() => {
@@ -75,9 +67,7 @@ function showNextCard() {
                 articlesBox.style.transition = "all 0.5s ease-in-out";
             }, 50);
         }, 500); // 等待執行的秒數 => 等同於移動的 transition 秒數
-    } else {
-        activateIndicator(currentCardIndex);
-    }
+    } 
 }
 
 function showPrevCard() {
@@ -94,7 +84,6 @@ function showPrevCard() {
     // currentIndex -1，執行時往前一個項目播放
     currentCardIndex--;
     moveOffset();
-    activateIndicator(currentCardIndex);
 }
 
 // ------------前後按鈕 => 點擊後重新計算 3 秒自動輪播------------
@@ -108,24 +97,6 @@ btnPrevCard.addEventListener("click", () => {
     restartInterval();
 });
 
-// ------------指示長條------------
-const navigationCard = document.querySelector('.navigation-card');
-let indicatorsAll = [];    // 所有指示條，為一組空陣列，在下方以 forEach 產生每個長條
-
-// 建立指示長條 => 以 forEach 迴圈，讓每個輪播圖都建立對應的長條
-articleCards.forEach((element, index) => {
-    let indicatorEach = document.createElement("span");
-    indicatorEach.classList.add("indicator-card");
-    navigationCard.appendChild(indicatorEach);      // 把 indicator 加到 navigation 中
-    indicatorsAll.push(indicatorEach);              // 將個別的 indicator 加到原本 indicators 空陣列中
-
-    indicatorEach.addEventListener("click", () => {
-        currentCardIndex = index - 1;       // 點擊到的那個編號，就等於跳轉播放的輪播圖編號
-        showNextCard(currentCardIndex);
-        restartInterval();          // 點擊後重新計算 3 秒自動輪播
-    });
-});
-
 // ------------初始值設定------------
 // 複製項目，並新增到最後 => 跑到最後一個項目時的重疊項目
 function startCardCarousel() {
@@ -135,7 +106,6 @@ function startCardCarousel() {
     }
 
     // currentCardIndex => 初始值 = 0
-    activateIndicator(currentCardIndex);
     intervalIdCard = setInterval(showNextCard, 3000);
 }
 startCardCarousel();
