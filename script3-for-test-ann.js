@@ -33,7 +33,7 @@ function moveLeftPerSecond() {
         image.classList.remove("scale")
         // images[0].classList.remove("scale")
 
-        image.style.transition = 'transform 1s ease-in-out';
+        image.style.transition = 'transform 1s ease-in-out, background-color 0.5s';
         image.style.transform = `translateX(${-moveDistance * n}px)`;
         image.style.zIndex = '2';
 
@@ -43,33 +43,34 @@ function moveLeftPerSecond() {
     images[n].style.zIndex = '10';
 
     carouselArea.addEventListener("mouseenter", () => {
-        images[n - 1].classList.add('scale');
+          images[n - 1].classList.add('scale');        
     });
 
     carouselArea.addEventListener("mouseleave", () => {
         images[n - 1].classList.remove('scale')
     });
 
-
     if (n === 3) {
         carouselArea.addEventListener("mouseenter", images3);
+
         n = 0
         setTimeout(() => {
+
             carouselArea.removeEventListener("mouseenter", images3);
 
             images.forEach(image => {
                 image.style = "";
-
             });
 
             setTimeout(() => {
                 images.forEach(image => {
-                    image.style.transition = 'transform 1s ease-in-out'; // 添加平移動畫
+                    image.style.transition = 'transform 1s ease-in-out, background-color 0.5s'; // 添加平移動畫
                 });
 
             }, 50)
         }, 1050)
     }
+
     n++
 }
 
@@ -123,7 +124,7 @@ carouselArea.addEventListener("mouseleave", () => {
 });
 
 function images3() {
-    images[3].classList.add('scale')
+    images[3].classList.add('scale');
 }
 
 
