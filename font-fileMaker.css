@@ -1,3 +1,7 @@
+* {
+  font-family: "LXGW WenKai Mono TC", monospace !important; 
+}
+
 html, body, .WebDirectInherit, input, textarea, select, .fm-field, .fm-label {
   font-family: "LXGW WenKai Mono TC", monospace !important; 
 }
