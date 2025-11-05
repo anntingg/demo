@@ -1,5 +1,4 @@
 html, body, .WebDirectInherit, input, textarea, select, .fm-field, .fm-label {
-  font-family: "LXGW WenKai Mono TC", monospace;
-  font-weight: 400;
+  font-family: "LXGW WenKai Mono TC", monospace !important; 
   font-style: normal;
 }
