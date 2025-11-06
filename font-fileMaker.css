@@ -1,45 +1,17 @@
+* {
+  line-height: 120%;
+}
 
-@font-face {
-    font-family: 'Noto Sans TC';
-    src: url('https://anntingg.github.io/demo/NotoSansTC-VariableFont_wght.ttf') format('ttf'),
-      /* Modern Browsers */ url('./NotoSansTC-VariableFont_wght.ttf')
-        format('ttf'); /* Modern Browsers */
-    font-style: normal;
-  }
-@font-face {
-    font-family: 'NotoSansTC-ExtraLight';
-    src: url('https://anntingg.github.io/demo/NotoSansTC-ExtraLight.ttf') format('ttf'),
-      /* Modern Browsers */ url('./NotoSansTC-ExtraLight.ttf')
-        format('ttf'); /* Modern Browsers */
-    font-style: normal;
-  }
+html, body, .WebDirectInherit, input, textarea, select, .fm-field, .fm-label {
+  line-height: 120%;
+}
 
-  @font-face {
-    font-family: 'NotoSansTC-Light';
-    src: url('https://anntingg.github.io/demo/NotoSansTC-Light.ttf') format('ttf'),
-      /* Modern Browsers */ url('./NotoSansTC-Light.ttf')
-        format('ttf'); /* Modern Browsers */
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: 'NotoSansTC-Medium';
-    src: url('https://anntingg.github.io/demo/NotoSansTC-Medium.ttf') format('ttf'),
-      /* Modern Browsers */ url('./NotoSansTC-Medium.ttf')
-        format('ttf'); /* Modern Browsers */
-    font-style: normal;
-  }
-
+.v-app, .v-window, .v-popupview-popup, .v-tooltip, .v-app input, .v-app select, .v-app button, .v-app textarea, .v-window input, .v-window select, .v-window button, .v-window textarea, .v-popupview-popup input, .v-popupview-popup select, .v-popupview-popup button, .v-popupview-popup textarea, .v-filterselect-suggestpopup, .v-datefield-popup, .v-contextmenu, .v-Notification, .v-menubar-submenu, .v-drag-element, .v-table-header-drag  {
+  line-height: 120%;
+}
 
 /*
 * {
   font-family: "LXGW WenKai Mono TC", monospace !important; 
-}
-
-html, body, .WebDirectInherit, input, textarea, select, .fm-field, .fm-label {
-  font-family: "LXGW WenKai Mono TC", monospace !important; 
-}
-
-.v-app, .v-window, .v-popupview-popup, .v-tooltip, .v-app input, .v-app select, .v-app button, .v-app textarea, .v-window input, .v-window select, .v-window button, .v-window textarea, .v-popupview-popup input, .v-popupview-popup select, .v-popupview-popup button, .v-popupview-popup textarea, .v-filterselect-suggestpopup, .v-datefield-popup, .v-contextmenu, .v-Notification, .v-menubar-submenu, .v-drag-element, .v-table-header-drag  {
-  font-family: "LXGW WenKai Mono TC", monospace !important; 
 }*/
+
