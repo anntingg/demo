@@ -4,7 +4,6 @@
     src: url('https://anntingg.github.io/demo/NotoSansTC-VariableFont_wght.ttf') format('ttf'),
       /* Modern Browsers */ url('./NotoSansTC-VariableFont_wght.ttf')
         format('ttf'); /* Modern Browsers */
-    font-weight: normal;
     font-style: normal;
   }
 @font-face {
@@ -12,7 +11,14 @@
     src: url('https://anntingg.github.io/demo/NotoSansTC-ExtraLight.ttf') format('ttf'),
       /* Modern Browsers */ url('./NotoSansTC-ExtraLight.ttf')
         format('ttf'); /* Modern Browsers */
-    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Noto Sans TC-Light';
+    src: url('https://anntingg.github.io/demo/NotoSansTC-Light.ttf') format('ttf'),
+      /* Modern Browsers */ url('./NotoSansTC-Light.ttf')
+        format('ttf'); /* Modern Browsers */
     font-style: normal;
   }
 
@@ -21,7 +27,6 @@
     src: url('https://anntingg.github.io/demo/NotoSansTC-Medium.ttf') format('ttf'),
       /* Modern Browsers */ url('./NotoSansTC-Medium.ttf')
         format('ttf'); /* Modern Browsers */
-    font-weight: normal;
     font-style: normal;
   }
 
