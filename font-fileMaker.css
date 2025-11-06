@@ -17,9 +17,9 @@
   }
 
   @font-face {
-    font-family: 'Noto Sans TC-Regular';
-    src: url('./NotoSansTC-Regular.ttf') format('ttf'),
-      /* Modern Browsers */ url('./NotoSansTC-Regular.ttf')
+    font-family: 'Noto Sans TC-Medium';
+    src: url('./NotoSansTC-Medium.ttf') format('ttf'),
+      /* Modern Browsers */ url('./NotoSansTC-Medium.ttf')
         format('ttf'); /* Modern Browsers */
     font-weight: normal;
     font-style: normal;
