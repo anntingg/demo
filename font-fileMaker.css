@@ -7,7 +7,7 @@
     font-style: normal;
   }
 @font-face {
-    font-family: 'Noto Sans TC-ExtraLight';
+    font-family: 'NotoSansTC-ExtraLight';
     src: url('https://anntingg.github.io/demo/NotoSansTC-ExtraLight.ttf') format('ttf'),
       /* Modern Browsers */ url('./NotoSansTC-ExtraLight.ttf')
         format('ttf'); /* Modern Browsers */
@@ -15,7 +15,7 @@
   }
 
   @font-face {
-    font-family: 'Noto Sans TC-Light';
+    font-family: 'NotoSansTC-Light';
     src: url('https://anntingg.github.io/demo/NotoSansTC-Light.ttf') format('ttf'),
       /* Modern Browsers */ url('./NotoSansTC-Light.ttf')
         format('ttf'); /* Modern Browsers */
@@ -23,7 +23,7 @@
   }
 
   @font-face {
-    font-family: 'Noto Sans TC-Medium';
+    font-family: 'NotoSansTC-Medium';
     src: url('https://anntingg.github.io/demo/NotoSansTC-Medium.ttf') format('ttf'),
       /* Modern Browsers */ url('./NotoSansTC-Medium.ttf')
         format('ttf'); /* Modern Browsers */
