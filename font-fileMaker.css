@@ -7,7 +7,23 @@
     font-weight: normal;
     font-style: normal;
   }
+@font-face {
+    font-family: 'Noto Sans TC-ExtraLight';
+    src: url('./NotoSansTC-ExtraLight.ttf') format('ttf'),
+      /* Modern Browsers */ url('./NotoSansTC-ExtraLight.ttf')
+        format('ttf'); /* Modern Browsers */
+    font-weight: normal;
+    font-style: normal;
+  }
 
+  @font-face {
+    font-family: 'Noto Sans TC-Regular';
+    src: url('./NotoSansTC-Regular.ttf') format('ttf'),
+      /* Modern Browsers */ url('./NotoSansTC-Regular.ttf')
+        format('ttf'); /* Modern Browsers */
+    font-weight: normal;
+    font-style: normal;
+  }
 
 
 /*
