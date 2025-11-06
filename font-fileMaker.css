@@ -1,3 +1,16 @@
+
+@font-face {
+    font-family: 'Noto Sans TC';
+    src: url('./NotoSansTC-VariableFont_wght.ttf') format('ttf'),
+      /* Modern Browsers */ url('./NotoSansTC-VariableFont_wght.ttf')
+        format('ttf'); /* Modern Browsers */
+    font-weight: normal;
+    font-style: normal;
+  }
+
+
+
+/*
 * {
   font-family: "LXGW WenKai Mono TC", monospace !important; 
 }
@@ -8,4 +21,4 @@ html, body, .WebDirectInherit, input, textarea, select, .fm-field, .fm-label {
 
 .v-app, .v-window, .v-popupview-popup, .v-tooltip, .v-app input, .v-app select, .v-app button, .v-app textarea, .v-window input, .v-window select, .v-window button, .v-window textarea, .v-popupview-popup input, .v-popupview-popup select, .v-popupview-popup button, .v-popupview-popup textarea, .v-filterselect-suggestpopup, .v-datefield-popup, .v-contextmenu, .v-Notification, .v-menubar-submenu, .v-drag-element, .v-table-header-drag  {
   font-family: "LXGW WenKai Mono TC", monospace !important; 
-}
+}*/
